@@ -1,0 +1,100 @@
+[flake8]
+
+# DESCRIPTION
+#     Configuration file for the python linter flake8.
+#
+#     This configuration is based on the generic
+#     configuration published on GitHub.
+#
+# AUTHOR
+#     tuan
+#
+# VERSION
+#     1.0
+#
+# SEE ALSO
+#     http://flake8.pycqa.org/en/latest/user/options.html
+#     http://flake8.pycqa.org/en/latest/user/error-codes.html
+#     https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+#
+
+################### PROGRAM ################################
+
+# Specify the number of subprocesses that Flake8 will use to run checks in parallel.
+jobs = auto
+
+
+################### OUTPUT #################################
+
+########## VERBOSITY ##########
+
+# Increase the verbosity of Flake8’s output.
+verbose = 0
+# Decrease the verbosity of Flake8’s output.
+quiet = 0
+
+################### GENERALS ##########################
+
+max-line-length = 119
+
+########## FORMATTING ##########
+
+# Select the formatter used to display errors to the user.
+format = default
+
+# Print the total number of errors.
+count = True
+# Print the source code generating the error/warning in question.
+show-source = True
+# Count the number of occurrences of each error/warning code and print a report.
+statistics = True
+
+################### IGNORE ##########################
+# ERROR CODES
+#
+# E/W  - PEP8 errors/warnings (pycodestyle)
+# F    - linting errors (pyflakes)
+# C    - McCabe complexity error (mccabe)
+#
+
+# it's not a bug that we aren't using all of hacking, ignore:
+# F812: list comprehension redefines ...
+# H101: Use TODO(NAME)
+# H202: assertRaises Exception too broad
+# H233: Python 3.x incompatible use of print operator
+# H301: one import per line
+# H306: imports not in alphabetical order (time, os)
+# H401: docstring should not start with a space
+# H403: multi line docstrings should end on a new line
+# H404: multi line docstring should start without a leading new line
+# H405: multi line docstring summary not separated with an empty line
+# H501: Do not use self.__dict__ for string formatting
+#E501: line too long
+#e402: module not at the top of file
+#e226: missing whitespace bt arthimetric op
+# W503 - line break before binary operator
+ignore = F812,H101,H202,H233,H301,H306,H401,H403,H404,H405,H501,E501,E402,E226,W503
+
+# Specify the list of error codes you wish Flake8 to report.
+select =
+    E,
+    W,
+    F,
+    C
+# Enable off-by-default extensions.
+enable-extensions =
+
+
+################### FILE PATTERNS ##########################
+
+# Provide a comma-separated list of glob patterns to exclude from checks.
+exclude =
+    .git,
+    __pycache__,
+	*migrations*
+
+# Provide a comma-separate list of glob patterns to include for checks.
+filename =
+    *.py
+
+

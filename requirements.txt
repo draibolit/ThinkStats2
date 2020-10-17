@@ -1,0 +1,8 @@
+jupyterlab
+import-ipynb
+scipy
+pandas
+sympy
+matplotlib
+flake8
+black
